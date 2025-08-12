@@ -1,0 +1,2 @@
+ninja: Entering directory `D:\AndroidProjects\OpenVpn3\lib_openvpn\.cxx\Debug\6a5in4m3\arm64-v8a'
+[1/1] cmd.exe /C "cd /D D:\AndroidProjects\OpenVpn3\lib_openvpn\.cxx\Debug\6a5in4m3\arm64-v8a && D:\soft\Android\Sdk\cmake\3.22.1\bin\cmake.exe -E make_directory D:/AndroidProjects/OpenVpn3/lib_openvpn/src/main/cpp/../../../build/ovpnassets"

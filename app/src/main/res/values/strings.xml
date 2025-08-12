@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">OpenVpn3</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="notifcation_title">OpenVPN3 - %s</string>
+</resources>
