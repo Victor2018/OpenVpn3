@@ -85,6 +85,8 @@ class MainActivity : VpnActivity() {
                 binding.mBtnConnect.text = "连接中"
             } else if (stateLevel == ConnectionStatus.LEVEL_CONNECTED) {
                 binding.mBtnConnect.text = "断开"
+            } else if (stateLevel == ConnectionStatus.LEVEL_NOTCONNECTED) {
+                binding.mBtnConnect.text = "连接"
             }
         }
     }
