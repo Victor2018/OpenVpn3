@@ -8,9 +8,9 @@
     "triple": "i686-linux-android",
     "llvmTriple": "i686-none-linux-android"
   },
-  "cxxBuildFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\x86",
-  "soFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
-  "soRepublishFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cmake\\debug\\obj\\x86",
+  "cxxBuildFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\x86",
+  "soFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
+  "soRepublishFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cmake\\debug\\obj\\x86",
   "abiPlatformVersion": 21,
   "cmake": {
     "effectiveConfiguration": {
@@ -34,13 +34,13 @@
     "implicitBuildTargetSet": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "cxxFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\.cxx",
-      "intermediatesBaseFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates",
-      "intermediatesFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx",
+      "cxxFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\.cxx",
+      "intermediatesBaseFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates",
+      "intermediatesFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx",
       "gradleModulePathName": ":lib_openvpn",
-      "moduleRootFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn",
-      "moduleBuildFile": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build.gradle.kts",
-      "makeFile": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\src\\main\\cpp\\CMakeLists.txt",
+      "moduleRootFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn",
+      "moduleBuildFile": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build.gradle.kts",
+      "makeFile": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\src\\main\\cpp\\CMakeLists.txt",
       "buildSystem": "CMAKE",
       "ndkFolder": "D:\\soft\\Android\\Sdk\\ndk\\28.0.13004108",
       "ndkFolderBeforeSymLinking": "D:\\soft\\Android\\Sdk\\ndk\\28.0.13004108",
@@ -150,7 +150,7 @@
         "SYSTEM": {}
       },
       "project": {
-        "rootBuildGradleFolder": "D:\\AndroidProjects\\OpenVpn3",
+        "rootBuildGradleFolder": "D:\\victor\\gh\\OpenVpn3",
         "sdkFolder": "D:\\soft\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
@@ -169,12 +169,12 @@
   "buildSettings": {
     "environmentVariables": []
   },
-  "prefabFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\prefab\\x86",
+  "prefabFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\prefab\\x86",
   "isActiveAbi": true,
   "fullConfigurationHash": "6a5in4m3c4d6i3z3g2w38105c1165o3t7310546u4v5hm2u346a35586z5j",
   "fullConfigurationHashKey": "# Values used to calculate the hash in this folder name.\n# Should not depend on the absolute path of the project itself.\n#   - AGP: 8.11.0.\n#   - $NDK is the path to NDK 28.0.13004108.\n#   - $PROJECT is the path to the parent folder of the root Gradle build file.\n#   - $ABI is the ABI to be built with. The specific value doesn\u0027t contribute to the value of the hash.\n#   - $HASH is the hash value computed from this text.\n#   - $CMAKE is the path to CMake 3.22.1.\n#   - $NINJA is the path to Ninja.\n-H$PROJECT/lib_openvpn/src/main/cpp\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003d$ABI\n-DCMAKE_ANDROID_ARCH_ABI\u003d$ABI\n-DANDROID_NDK\u003d$NDK\n-DCMAKE_ANDROID_NDK\u003d$NDK\n-DCMAKE_TOOLCHAIN_FILE\u003d$NDK/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d$NINJA\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d$PROJECT/lib_openvpn/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d$PROJECT/lib_openvpn/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_BUILD_TYPE\u003dDebug\n-B$PROJECT/lib_openvpn/.cxx/Debug/$HASH/$ABI\n-GNinja",
   "configurationArguments": [
-    "-HD:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\src\\main\\cpp",
+    "-HD:\\victor\\gh\\OpenVpn3\\lib_openvpn\\src\\main\\cpp",
     "-DCMAKE_SYSTEM_NAME\u003dAndroid",
     "-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON",
     "-DCMAKE_SYSTEM_VERSION\u003d21",
@@ -185,11 +185,11 @@
     "-DCMAKE_ANDROID_NDK\u003dD:\\soft\\Android\\Sdk\\ndk\\28.0.13004108",
     "-DCMAKE_TOOLCHAIN_FILE\u003dD:\\soft\\Android\\Sdk\\ndk\\28.0.13004108\\build\\cmake\\android.toolchain.cmake",
     "-DCMAKE_MAKE_PROGRAM\u003dD:\\soft\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
-    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
-    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3\\obj\\x86",
     "-DCMAKE_BUILD_TYPE\u003dDebug",
-    "-BD:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\x86",
+    "-BD:\\victor\\gh\\OpenVpn3\\lib_openvpn\\.cxx\\Debug\\6a5in4m3\\x86",
     "-GNinja"
   ],
-  "intermediatesParentFolder": "D:\\AndroidProjects\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3"
+  "intermediatesParentFolder": "D:\\victor\\gh\\OpenVpn3\\lib_openvpn\\build\\intermediates\\cxx\\Debug\\6a5in4m3"
 }
