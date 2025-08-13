@@ -17,6 +17,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("../docs/victor_keystore.jks")
+            keyAlias = "victor"
+            keyPassword = "android"
+            storePassword = "android"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -24,15 +33,22 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("release")
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
+
     buildFeatures {
         viewBinding = true
         buildConfig = true
@@ -44,20 +60,6 @@ android {
             aidl.srcDirs("src/main/aidl")
         }
     }
-
-   /* flavorDimensions("implementation")
-
-    productFlavors {
-        create("ui") {
-            setDimension("implementation")
-            buildConfigField("boolean", "openvpn3", "true")
-        }
-        create("skeleton") {
-            setDimension("implementation")
-            buildConfigField("boolean", "openvpn3", "false")
-        }
-    }*/
-
 
     bundle {
         abi { enableSplit = true }
