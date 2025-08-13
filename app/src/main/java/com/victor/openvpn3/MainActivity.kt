@@ -1,18 +1,15 @@
 package com.victor.openvpn3
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.victor.openvpn3.databinding.ActivityMainBinding
+import de.blinkt.openvpn.api.IOpenVPNStatusCallback
+import de.blinkt.openvpn.api.VpnConnectHelper
 import de.blinkt.openvpn.core.ConnectionStatus
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
-class MainActivity : VpnActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
 
     val gfw = "client\n" +
     "dev tun\n" +
@@ -47,7 +44,7 @@ class MainActivity : VpnActivity() {
     "-----END CERTIFICATE-----\n" +
     "</ca>"
 
-    var stateLevel = ConnectionStatus.UNKNOWN_LEVEL
+    var mVpnConnectHelper: VpnConnectHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,11 +54,25 @@ class MainActivity : VpnActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        mVpnConnectHelper = VpnConnectHelper(
+            this,
+            object : IOpenVPNStatusCallback.Stub() {
+                override fun newStatus(
+                    uuid: String?,
+                    state: String?,
+                    message: String?,
+                    level: String?
+                ) {
+                    onVpnConnectState(level)
+                }
+            })
+
         binding.mBtnConnect.setOnClickListener { view ->
-            if (stateLevel == ConnectionStatus.LEVEL_CONNECTED) {
-                stopVpn()
-            } else if (stateLevel == ConnectionStatus.LEVEL_VPNPAUSED) {
-                resumeVpn()
+            val connectionStatus = mVpnConnectHelper?.connectionStatus
+            if (connectionStatus == ConnectionStatus.LEVEL_CONNECTED) {
+                mVpnConnectHelper?.stopVpn()
+            } else if (connectionStatus == ConnectionStatus.LEVEL_VPNPAUSED) {
+                mVpnConnectHelper?.resumeVpn()
             } else {
                 val server = Server(
                     2, 420, "GFW",
@@ -71,23 +82,26 @@ class MainActivity : VpnActivity() {
                     "lkw2025!",
                     56004
                 )
-                startVpn(server)
+                mVpnConnectHelper?.startVpn(server.country,server.ovpnUserName,server.ovpnUserPassword,server.flagUrl)
             }
         }
     }
 
-    override fun onVpnConnectState(level: String?) {
-        super.onVpnConnectState(level)
-        CoroutineScope(Dispatchers.Main).launch {
-            stateLevel = ConnectionStatus.fromString(level)
-            binding.mTvStatus.text = level
-            if (stateLevel == ConnectionStatus.LEVEL_START) {
-                binding.mBtnConnect.text = "连接中"
-            } else if (stateLevel == ConnectionStatus.LEVEL_CONNECTED) {
-                binding.mBtnConnect.text = "断开"
-            } else if (stateLevel == ConnectionStatus.LEVEL_NOTCONNECTED) {
-                binding.mBtnConnect.text = "连接"
-            }
+    fun onVpnConnectState(level: String?) {
+        val connectionStatus = mVpnConnectHelper?.connectionStatus
+        binding.mTvStatus.text = level
+        if (connectionStatus == ConnectionStatus.LEVEL_START) {
+            binding.mBtnConnect.text = "连接中"
+        } else if (connectionStatus == ConnectionStatus.LEVEL_CONNECTED) {
+            binding.mBtnConnect.text = "断开"
+        } else if (connectionStatus == ConnectionStatus.LEVEL_NOTCONNECTED) {
+            binding.mBtnConnect.text = "连接"
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mVpnConnectHelper?.onDestroy()
+        mVpnConnectHelper = null
     }
 }

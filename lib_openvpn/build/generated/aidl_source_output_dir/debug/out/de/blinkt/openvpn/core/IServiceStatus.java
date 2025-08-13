@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Using: D:\soft\Android\Sdk\build-tools\35.0.0\aidl.exe -pD:\soft\Android\Sdk\platforms\android-35\framework.aidl -oD:\AndroidProjects\OpenVpn3\lib_openvpn\build\generated\aidl_source_output_dir\debug\out -ID:\AndroidProjects\OpenVpn3\lib_openvpn\src\main\aidl -ID:\AndroidProjects\OpenVpn3\lib_openvpn\src\debug\aidl -IC:\Users\victor\.gradle\caches\8.13\transforms\9155e421dbef7f1d5924f8acd229d62d\transformed\core-1.13.1\aidl -IC:\Users\victor\.gradle\caches\8.13\transforms\b204d31db6eb865ceab9d33e1c5b6361\transformed\versionedparcelable-1.1.1\aidl -dC:\Users\victor\AppData\Local\Temp\aidl8888824684340508114.d D:\AndroidProjects\OpenVpn3\lib_openvpn\src\main\aidl\de\blinkt\openvpn\core\IServiceStatus.aidl
+ * Using: D:\soft\Android\Sdk\build-tools\35.0.0\aidl.exe -pD:\soft\Android\Sdk\platforms\android-35\framework.aidl -oD:\victor\gh\OpenVpn3\lib_openvpn\build\generated\aidl_source_output_dir\debug\out -ID:\victor\gh\OpenVpn3\lib_openvpn\src\main\aidl -ID:\victor\gh\OpenVpn3\lib_openvpn\src\debug\aidl -IC:\Users\victor\.gradle\caches\8.13\transforms\9155e421dbef7f1d5924f8acd229d62d\transformed\core-1.13.1\aidl -IC:\Users\victor\.gradle\caches\8.13\transforms\b204d31db6eb865ceab9d33e1c5b6361\transformed\versionedparcelable-1.1.1\aidl -dC:\Users\victor\AppData\Local\Temp\aidl8041272125321057082.d D:\victor\gh\OpenVpn3\lib_openvpn\src\main\aidl\de\blinkt\openvpn\core\IServiceStatus.aidl
  */
 package de.blinkt.openvpn.core;
 public interface IServiceStatus extends android.os.IInterface
