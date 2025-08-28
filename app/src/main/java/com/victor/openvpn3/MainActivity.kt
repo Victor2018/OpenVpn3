@@ -44,6 +44,45 @@ class MainActivity : AppCompatActivity() {
     "-----END CERTIFICATE-----\n" +
     "</ca>"
 
+    var test215: String = """
+        client
+        dev tun
+        proto tcp
+        remote 192.168.1.215 61194
+        resolv-retry infinite
+        nobind
+        persist-key
+        persist-tun
+        remote-cert-tls server
+        cipher AES-256-CBC
+        verb 3
+        auth-user-pass
+        
+        <ca>
+        -----BEGIN CERTIFICATE-----
+        MIIDNTCCAh2gAwIBAgIJANRDd43ifFz9MA0GCSqGSIb3DQEBCwUAMBYxFDASBgNV
+        BAMMC0Vhc3ktUlNBIENBMB4XDTIyMDUwMTEyMDIxM1oXDTMyMDQyODEyMDIxM1ow
+        FjEUMBIGA1UEAwwLRWFzeS1SU0EgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+        ggEKAoIBAQDTRGvOI7pRDFPCWo8EuOMy2V/ezw2L3PaHqDpyKWhGgWWqzYsXFxkF
+        iBGJOhpdpUd5R89SAGaF+DxNqFA4ai9NwxfVAq3O+0xKytQozI9bLklmkmhOEg2L
+        oLQmHub2QGRXok1ZB3NlYt4cSNnkASTPwJY+4vjRaJYEtwJuQrXTCWr1lL4sw4O4
+        EAhc7lK45a28dRFwpLVeMtpbz88eucVkJeT5aoFLpsHYxR3CVfs4l+N72eFC1m+e
+        5xZECKGyYWAm5wUhgMQ62Dvr2GMrGDq2PDqh0ohXNWWowdJmgkbPhPMxGX9S0M5X
+        ASRK/WtT+vRcIWXB9U2pAc1ATLYM4MyvAgMBAAGjgYUwgYIwHQYDVR0OBBYEFFZC
+        ApN09CQwIwv8hrUTvyrTOuoCMEYGA1UdIwQ/MD2AFFZCApN09CQwIwv8hrUTvyrT
+        OuoCoRqkGDAWMRQwEgYDVQQDDAtFYXN5LVJTQSBDQYIJANRDd43ifFz9MAwGA1Ud
+        EwQFMAMBAf8wCwYDVR0PBAQDAgEGMA0GCSqGSIb3DQEBCwUAA4IBAQCAKRblI7r/
+        pmNW3jxdoAJ+cP40JMITgyaCpD/HykRAq0p9ZTQ6wxDF5yz7wWgw/7KVcwZhUpwW
+        C3yWGe68BeFNzw4xRlXlpocQM/wMyPWqzw61CbVFnm1Ze6f8P/Sv9nuiRhU6Us8e
+        5GNwanP1ItmKOplJ8PN60vy76q2xZwzIp9JIYT7zwPy7QMLqCpuvTA+6fkSqyKgc
+        0EMd9kKSbn+D3y8NpYHXoioVghWOOwpVCNAbfb7wUJxX6tAAiF0xjPKuY+tRbEYm
+        ZvATwmmYEhh4J9uliPGOTdRFwF55jKbcLAbIWmwvDo8+H2N8irFR7mdi2El5PzkJ
+        rKBnzfDYh9U6
+        -----END CERTIFICATE-----
+        </ca>
+        """.trimIndent()
+
+
     var mVpnConnectHelper: VpnConnectHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,7 +113,7 @@ class MainActivity : AppCompatActivity() {
             } else if (connectionStatus == ConnectionStatus.LEVEL_VPNPAUSED) {
                 mVpnConnectHelper?.resumeVpn()
             } else {
-                val server = Server(
+                val server189 = Server(
                     2, 420, "GFW",
                     gfw,
                     "106.75.248.189",
@@ -82,7 +121,15 @@ class MainActivity : AppCompatActivity() {
                     "lkw2025!",
                     56004
                 )
-                mVpnConnectHelper?.startVpn(server.country,server.ovpnUserName,server.ovpnUserPassword,server.flagUrl)
+                val server215 = Server(
+                    0, 400, "中国香港215",
+                    test215,
+                    "192.168.1.215",
+                    "Hongkong-02",
+                    "123456",
+                    61194
+                )
+                mVpnConnectHelper?.startVpn(server189.country,server189.ovpnUserName,server189.ovpnUserPassword,server189.flagUrl)
             }
         }
     }

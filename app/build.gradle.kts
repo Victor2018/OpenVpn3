@@ -24,6 +24,18 @@ android {
             keyPassword = "android"
             storePassword = "android"
         }
+        create("user_debug") {
+            storeFile = file("../docs/platform_user_debug.jks")
+            keyAlias = "system_debug"
+            keyPassword = "jingshu2023"
+            storePassword = "jingshu2023"
+        }
+        create("user") {
+            storeFile = file("../docs/platform_user.jks")
+            keyAlias = "system"
+            keyPassword = "jingshu2023"
+            storePassword = "jingshu2023"
+        }
     }
 
     buildTypes {
@@ -33,10 +45,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("user")
         }
         debug {
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName("user_debug")
         }
     }
 

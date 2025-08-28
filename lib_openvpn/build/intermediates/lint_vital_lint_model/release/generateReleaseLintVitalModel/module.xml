@@ -1,0 +1,49 @@
+<lint-module
+    format="1"
+    dir="D:\victor\gh\OpenVpn3\lib_openvpn"
+    name=":lib_openvpn"
+    type="LIBRARY"
+    maven="OpenVpn3:lib_openvpn:unspecified"
+    agpVersion="8.11.0"
+    buildFolder="build"
+    bootClassPath="D:\soft\Android\Sdk\platforms\android-35\android.jar;D:\soft\Android\Sdk\build-tools\35.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-35"
+    neverShrinking="true">
+  <lintOptions
+      disable="MissingTranslation,UnsafeNativeCodeLocation"
+      enable="BackButton,EasterEgg,StopShip,IconExpectedSize,GradleDynamicVersion,NewerVersionAvailable"
+      check="MissingTranslation,UnsafeNativeCodeLocation"
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="BackButton"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="EasterEgg"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="GradleDynamicVersion"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="IconExpectedSize"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="MissingTranslation"
+        severity="IGNORE" />
+      <severity
+        id="NewerVersionAvailable"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="StopShip"
+        severity="DEFAULT_ENABLED" />
+      <severity
+        id="UnsafeNativeCodeLocation"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# openvpn3
+-keep interface de.blinkt.openvpn.api.IOpenVPNAPIService { *; }
+-keep interface de.blinkt.openvpn.api.IOpenVPNStatusCallback { *; }
+-keep class de.blinkt.openvpn.api.APIVpnProfile { *; }
